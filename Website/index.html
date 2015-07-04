@@ -17,50 +17,63 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	</head>
 	<body ng-app="synergyCity" ng-controller="Controller" class="synergyCity">
-		<div class="toolbox">
-			<toolbox drag-start="true"></toolbox>
-			<button ng-click="setHouses(1)">1 House</button>
-			<button ng-click="setHouses(4)">4 Houses</button>
-		</div>
-		<div class="canvas">
-			<!--<house ng-repeat="house in houses"></house>-->
-			<div class="ground">
-				<div class="six-houses">
-					<house></house>
-					<div class="vertical-road">
-						<div class="vertical-road-markings"></div>
-					</div>
-					<house></house>
-					<div class="vertical-road">
-						<div class="vertical-road-markings"></div>
-					</div>
-					<house></house>
-					<div class="horizontal-road">
-						<div class="horizontal-road-markings"></div>
-					</div>
-					<div class="intersection"></div>
-					<div class="horizontal-road">
-						<div class="horizontal-road-markings"></div>
-					</div>
-					<div class="intersection"></div>
-					<div class="horizontal-road">
-						<div class="horizontal-road-markings"></div>
-					</div>
-					<house></house>
-					<div class="vertical-road">
-						<div class="vertical-road-markings"></div>
-					</div>
-					<house></house>
-					<div class="vertical-road">
-						<div class="vertical-road-markings"></div>
-					</div>
-					<house></house>
+		<div class="header">
+			<div class="header-left"></div>
+			<div class="header-center">
+				<div class="header-center-wrapper">
+					<div class="header-center-text"></div>
 				</div>
 			</div>
+			<div class="header-right">
+				<div class="city"></div>
+			</div>
 		</div>
-		<div class="global-panels">
-			<global-data></global-data>
-			<time-control></time-control>
+		<div class="body">
+			<div class="toolbox">
+				<toolbox drag-start="true"></toolbox>
+				<button ng-click="setHouses(1)">1 House</button>
+				<button ng-click="setHouses(4)">4 Houses</button>
+			</div>
+			<div class="canvas">
+				<!--<house ng-repeat="house in houses"></house>-->
+				<div class="ground">
+					<div class="six-houses">
+						<house></house>
+						<div class="vertical-road">
+							<div class="vertical-road-markings"></div>
+						</div>
+						<house></house>
+						<div class="vertical-road">
+							<div class="vertical-road-markings"></div>
+						</div>
+						<house></house>
+						<div class="horizontal-road">
+							<div class="horizontal-road-markings"></div>
+						</div>
+						<div class="intersection"></div>
+						<div class="horizontal-road">
+							<div class="horizontal-road-markings"></div>
+						</div>
+						<div class="intersection"></div>
+						<div class="horizontal-road">
+							<div class="horizontal-road-markings"></div>
+						</div>
+						<house></house>
+						<div class="vertical-road">
+							<div class="vertical-road-markings"></div>
+						</div>
+						<house></house>
+						<div class="vertical-road">
+							<div class="vertical-road-markings"></div>
+						</div>
+						<house></house>
+					</div>
+				</div>
+			</div>
+			<div class="global-panels">
+				<global-data></global-data>
+				<time-control></time-control>
+			</div>
 		</div>
 	</body>
 </html>

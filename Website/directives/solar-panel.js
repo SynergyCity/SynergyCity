@@ -5,7 +5,8 @@ angular.module('synergyCity')
       templateUrl: 'directives/solar-panel.html',
       restrict: 'E',
       controller: function($scope) {
-        
+        $scope.rows = 10;
+		
       }
     };
   });
