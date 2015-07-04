@@ -71,3 +71,7 @@ house {
 .solar-panel.ng-enter-active {
     opacity: 1;
 }
+
+.global-panels {
+    width: 300px;
+}
