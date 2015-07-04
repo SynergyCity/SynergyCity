@@ -177,7 +177,7 @@ function Neighbourhood()
 function PowerCompany()
 {
 	// https://www.synergy.net.au/at_home/home_plan_a1_tariff.xhtml
-	this.pricePerUnit = 0.257029;
+	this.pricePerUnit = 0.257029; // per kWh
 	this.powerGridActive = true;
 	this.coalGeneration = 0.8; // FIXME: Assuming 80% of power company's generation capacity is from coal
 }
