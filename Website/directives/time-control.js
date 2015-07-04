@@ -3,8 +3,14 @@ angular.module('synergyCity')
     return {
       restrict: 'E',
       templateUrl: 'directives/time-control.html',
-      controller: function() {
-        
+      scope: true,
+      controller: function($scope) {
+        $scope.nextClicked = function() {
+	  console.log('Next Clicked!');
+	};
+
+	$scope.currentTime = "Summer?";
+	$scope.currentWeather = "noun_67566_cc";
       }
     };
   });
