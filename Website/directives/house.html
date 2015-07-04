@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<div class="house-view">
-		<div class="house-image"></div>
+		<div class="house-image" ng-style="{ 'background-image': 'url(\'content/house_' + house.iconId + '.svg\')' }"></div>
 	</div>
 	<div class="house-inventory">
 		<div class="solar-panels" drag-over="dragOverSolarPanel($event)" drop="dropSolarPanel()">

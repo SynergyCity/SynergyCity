@@ -8,6 +8,7 @@ html, body {
 	padding:0;
 	font-family:roboto;
 	overflow:hidden;
+	min-width:1000px;
 }
 
 .synergyCity {
@@ -269,4 +270,26 @@ house {
 	width: Calc(33% - 18px);
 	height: Calc(50% - 15px);
 	padding:30px;
+}
+
+.global-level {
+	font-size: 20px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.global-money {
+	font-size:30px;
+	margin: 30px 0 0 30px;
+}
+
+.global-happiness {
+	font-size:30px;
+	margin: 30px 0 0 30px;
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.global-happiness face {
+	vertical-align: middle;
 }
