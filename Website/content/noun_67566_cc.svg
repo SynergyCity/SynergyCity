@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 96 120" x="0px" y="0px">
 <path d="M62 80h-60c-1.104 0-2-0.9-2-2v-60c0-1.104 0.896-2 2-2h60c0.508 0 1 0.192 1.368 0.54l32 30c0.404 0.38 0.632 0.908 0.632 1.46 0 0.556-0.228 1.084-0.632 1.46l-32 30c-0.368 0.348-0.86 0.54-1.368 0.54zM4 76h57.208l29.872-28-29.872-28h-57.208v56z" fill="#000000"/>
-<text>Next</text>
+<text x="15" y="55" font-size="20" font-family="Verdana">Next</text>
 </svg>
