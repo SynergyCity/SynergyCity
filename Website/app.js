@@ -1,4 +1,4 @@
-angular.module('synergyCity', [])
+angular.module('synergyCity', ['ngAnimate'])
   .run(function() {
     
   });

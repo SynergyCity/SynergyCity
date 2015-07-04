@@ -28,7 +28,7 @@ house {
 	display:flex;
 	flex-direction: column;
 	height:100%;
-	margin: 100px;
+	/*margin: 100px;*/
 }
 
 .house-status {
@@ -44,4 +44,30 @@ house {
 .house-inventory {
 	flex: 1;
 	background: yellow;
+	position:relative;
+}
+
+.solar-panels {
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+.solar-panel {
+	float:left;
+	width:25%;
+	height:50%;
+	background:grey;
+}
+
+.solar-panel {
+    opacity: 1;
+}
+.solar-panel.ng-enter {
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    opacity: 0;
+}
+.solar-panel.ng-enter-active {
+    opacity: 1;
 }
