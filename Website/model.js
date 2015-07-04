@@ -119,6 +119,29 @@ function PowerCompany()
 {
 	// https://www.synergy.net.au/at_home/home_plan_a1_tariff.xhtml
 	this.pricePerUnit = 0.257029;
+	this.powerGridActive = true;
+	this.coalGeneration = 0.8; // FIXME: Assuming 80% of power company's generation capacity is from coal
+}
+
+function Environment()
+{
+	// 1 = awesome, 0 = ok, -1 = poor
+	this.airQuality = 1
+}
+
+function CalamityGenerator()
+{
+	// TODO: This can randomly generate calamities
+	
+	// Clouds
+	// - x.powerProduced = 0 for x in allHouses.fixtures where x instanceof SolarPanelFixture
+	// Power outages
+	// - PowerCompany.powerGridActive = false
+	// Smog
+	// - Environment.airQuality = -1 if PowerCompany.powerGridActive and PowerCompany.coalGeneration > 0.6
+	// Hail
+	// - x.powerProduced = 0.5 for x in allHouses.fixtures where x instanceof SolarPanelFixture
+	// - FIXME: or maybe panels have hp, which gets reduced until they get destroyed?
 }
 
 // FIXME
