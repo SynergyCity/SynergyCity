@@ -1,3 +1,11 @@
+
+var seasonalConsumption = {
+	'spring': 12.34,
+	'summer': 15.36,
+	'autumn': 14.25,
+	'winter': 15.58
+};
+
 // The happiness engine
 function HappinessEngine()
 {
@@ -92,10 +100,10 @@ function Toolbox()
 {
 	this.fixtureTypes = {
 		'Solar Panel': SolarPanelFixture,
-		'Wind Turbine': WindTurbineFixture,
-		'Battery': BatteryFixture,
-		'Air Conditioner': AirConditionerFixture,
-		'TV': TVFixture
+		//'Wind Turbine': WindTurbineFixture,
+		//'Battery': BatteryFixture,
+		//'Air Conditioner': AirConditionerFixture,
+		//'TV': TVFixture
 	};
 }
 
@@ -105,27 +113,36 @@ function Wallet()
 	this.incomePerTimeSlice = 42;
 }
 
+Wallet.prototype.payPowerBill = function(consumption)
+{
+	// FIXME
+}
+
 function House()
 {
 	this.state = "It's not lupus";
 	this.fixtures = [];
 	this.happinessEngine = new HappinessEngine();
 	this.wallet = new Wallet();
+	this.happiness = 0;
 }
 
-House.prototype.completeTimeSlice = function(t)
+House.prototype.completeTimeSlice = function(season)
 {
+	var energyProduced = this.getProduction(season);
+	var energyConsumed = this.getConsumption(season);
 	this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
 }
 
-House.prototype.getProduction = function()
+House.prototype.getProduction = function(season)
 {
 	// FIXME: Get total production from all fixtures in the house
 }
 
-House.prototype.getConsumption = function()
+House.prototype.getConsumption = function(season)
 {
 	// FIXME: Get total consumtpion from all fixtures in the house
+	return seasonalConsumption[season];
 }
 
 function Neighbourhood()
