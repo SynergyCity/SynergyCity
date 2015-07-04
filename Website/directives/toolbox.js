@@ -3,6 +3,9 @@ angular.module('synergyCity')
     return {
       scope: true,
       templateUrl: 'directives/toolbox.html',
-      restrict: 'E'
+      restrict: 'E',
+      controller: function($scope) {
+        
+      }
     };
   });
