@@ -1,19 +1,19 @@
-	<div class="house-status">
+	<div class="house-status" drag-over="dragOverSolarPanel($event)" drop="dropSolarPanel()">
 		<div class="house-status-production">
-			<div class="production-value">{{house.getProduction(season)}}KW</div>
+			<div class="production-value">{{house.getProduction(season)}}kWh</div>
 		</div>
 		<div class="house-status-consumption">
-			<div class="consumption-value">{{house.getConsumption(season)}}KW</div>
+			<div class="consumption-value">{{house.getConsumption(season)}}kWh</div>
 		</div>
 		<div class="house-status-happiness">
 			<div class="happiness-value"><face style="width:20px;height:20px;" happiness-level="house.happiness"></face></div>
 		</div>
 	</div>
-	<div class="house-view">
+	<div class="house-view" drag-over="dragOverSolarPanel($event)" drop="dropSolarPanel()">
 		<div class="house-image" ng-style="{ 'background-image': 'url(\'content/house_' + house.iconId + '.svg\')' }"></div>
 	</div>
-	<div class="house-inventory">
-		<div class="solar-panels" drag-over="dragOverSolarPanel($event)" drop="dropSolarPanel()">
+	<div class="house-inventory" drag-over="dragOverSolarPanel($event)" drop="dropSolarPanel()">
+		<div class="solar-panels">
 			<div class="solar-panel" ng-repeat="solarPanel in solarPanels"></div>
 		</div>
 	</div>
