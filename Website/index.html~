@@ -3,8 +3,6 @@
 <html>
 	<head>
 		<script src="lib/angular.js"></script>
-		<script src="app.js"></script>
-		<script src="controllers/testController.js"></script>
 	</head>
 	<body ng-app="synergyCity">
 		<span>Hola!</span>
