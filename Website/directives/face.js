@@ -2,8 +2,8 @@ angular.module('synergyCity')
   .directive('face', function(){
     return {
       restrict: 'E',
-      scope: { happinessLevel: '@' }
-      template: '<img src="content/smiley-{{happinessName}}"></img>',
+      scope: { happinessLevel: '@' },
+      template: '<img style="width:100%;height:100%;" src="content/smiley-{{happinessName}}.svg"></img>',
       controller: function($scope){
         $scope.$watch('happinessLevel', function(){
 	  switch($scope.happinessLevel) {
