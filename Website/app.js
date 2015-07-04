@@ -2,7 +2,8 @@ angular.module('synergyCity', ['ngAnimate'])
   .run(function() {
     
   }).controller('Controller', function($scope) {
-    $scope.houses = [];
+    $scope.season = "spring";
+    $scope.houses = [new House(),new House(),new House(),new House(),new House(),new House()];
     
     $scope.setHouses = function(houses) {
       $scope.houses = [];
@@ -12,5 +13,5 @@ angular.module('synergyCity', ['ngAnimate'])
       }
     }
     
-    $scope.setHouses(1);
+//    $scope.setHouses(1);
   });

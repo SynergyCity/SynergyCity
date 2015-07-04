@@ -1,9 +1,11 @@
 angular.module('synergyCity')
   .directive('house', function() {
     return {
-      scope: true,
+      scope: { house: '=houseRef'},
       templateUrl: 'directives/house.html',
       controller: function($scope) {
+        $scope.__proto__ = $scope.$parent;
+
         $scope.solarPanels = [
           {},
           {},

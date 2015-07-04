@@ -98,7 +98,7 @@ house {
 	text-align:center;
 }
 
-.generation-value {
+.consumption-value {
 	text-align:center;
 }
 
@@ -164,7 +164,7 @@ house {
 	flex:1;
 }
 
-.house-status-generation {
+.house-status-consumption {
 	flex:1;
 }
 

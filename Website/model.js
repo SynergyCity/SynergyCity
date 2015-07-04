@@ -180,8 +180,8 @@ function CalamityGenerator()
 }
 
 // FIXME
-var scope;
-scope.globalTime = 0;
+//var scope;
+//scope.globalTime = 0;
 
 // FIXME
 // On initial load:

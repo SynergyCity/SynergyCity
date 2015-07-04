@@ -5,6 +5,7 @@
 		<script src="lib/angular.js"></script>
 		<script src="lib/angular-animate.min.js"></script>
 		<script src="app.js"></script>
+		<script src="model.js"></script>
 		<script src="directives/drag-drop.js"></script>
 		<script src="services/data-service.js"></script>
 		<script src="directives/face.js"></script>
@@ -35,16 +36,16 @@
 			<div class="canvas">
 				<!--<house ng-repeat="house in houses"></house>-->
 				<div class="ground">
-					<div class="six-houses">
-						<house></house>
+					<div class="six-houses" ng-if="houses.length == 6">
+						<house house-ref="houses[0]"></house>
 						<div class="vertical-road">
 							<div class="vertical-road-markings"></div>
 						</div>
-						<house></house>
+						<house house-ref="houses[1]"></house>
 						<div class="vertical-road">
 							<div class="vertical-road-markings"></div>
 						</div>
-						<house></house>
+						<house house-ref="houses[2]"></house>
 						<div class="horizontal-road">
 							<div class="horizontal-road-markings"></div>
 						</div>
@@ -56,15 +57,15 @@
 						<div class="horizontal-road">
 							<div class="horizontal-road-markings"></div>
 						</div>
-						<house></house>
+						<house house-ref="houses[3]"></house>
 						<div class="vertical-road">
 							<div class="vertical-road-markings"></div>
 						</div>
-						<house></house>
+						<house house-ref="houses[4]"></house>
 						<div class="vertical-road">
 							<div class="vertical-road-markings"></div>
 						</div>
-						<house></house>
+						<house house-ref="houses[5]"></house>
 					</div>
 				</div>
 			</div>
