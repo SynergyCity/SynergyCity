@@ -75,3 +75,20 @@ house {
 .global-panels {
     width: 300px;
 }
+
+.house-status {
+	display:flex;
+	flex-direction:row;
+}
+
+.house-status-production {
+	flex:1;
+}
+
+.house-status-generation {
+	flex:1;
+}
+
+.house-status-happiness {
+	flex:1;
+}
