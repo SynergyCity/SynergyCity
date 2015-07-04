@@ -146,6 +146,7 @@ function House()
 	this.happinessEngine = new HappinessEngine();
 	this.wallet = new Wallet();
 	this.happiness = 0;
+	this.iconId = Math.round(Math.random() * 7) + 1;
 }
 
 House.prototype.completeTimeSlice = function(season)
