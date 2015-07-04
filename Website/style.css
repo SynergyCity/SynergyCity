@@ -1,0 +1,47 @@
+html, body {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+.synergyCity {
+	display:flex;
+	flex-direction: row;
+}
+
+.toolbox {
+	flex: 0 0 400px;
+	border-right: #ddd 1px solid;
+}
+
+.canvas {
+	flex: 1;
+	height:100%;
+}
+/*
+house {
+	display:block;
+	height:100%;
+}*/
+
+house {
+	display:flex;
+	flex-direction: column;
+	height:100%;
+	margin: 100px;
+}
+
+.house-status {
+	flex: 0 0 50px;
+	background: red;
+}
+
+.house-view {
+	flex: 1;
+	background: orange;
+}
+
+.house-inventory {
+	flex: 1;
+	background: yellow;
+}

@@ -4,9 +4,14 @@
 	<head>
 		<script src="lib/angular.js"></script>
 		<script src="app.js"></script>
+		<script src="directives/house.js"></script>
 		<script src="controllers/testController.js"></script>
+		<link href="style.css" rel="stylesheet" />
 	</head>
-	<body ng-app="synergyCity">
-		<span>Hola!</span>
+	<body ng-app="synergyCity" class="synergyCity">
+		<div class="toolbox"></div>
+		<div class="canvas">
+			<house></house>
+		</div>
 	</body>
 </html>
