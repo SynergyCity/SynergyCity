@@ -23,6 +23,7 @@ angular.module('synergyCity')
       controller: function($scope, $element, $attrs, $parse) {
         $element.on('drop', function() {
 	       $parse($attrs.drop)($scope);
+		   $element.attr('draggable', false);
          $scope.$apply();
 		    });
       }
