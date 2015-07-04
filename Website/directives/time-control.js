@@ -7,10 +7,11 @@ angular.module('synergyCity')
       controller: function($scope) {
         $scope.nextClicked = function() {
 	  console.log('Next Clicked!');
+	  $scope.currentWeather = "smiley-sad" == $scope.currentWeather ? "smiley-happy" : "smiley-sad";
 	};
 
 	$scope.currentTime = "Summer?";
-	$scope.currentWeather = "noun_67566_cc";
+	$scope.currentWeather = "smiley-neutral";
       }
     };
   });
