@@ -7,6 +7,7 @@ html, body {
 	margin:0;
 	padding:0;
 	font-family:roboto;
+	overflow:hidden;
 }
 
 .synergyCity {
@@ -18,6 +19,7 @@ html, body {
 	flex:0 0 80px;
 	display:flex;
 	height:80px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.10);
 }
 
 .header-left {
@@ -36,7 +38,7 @@ html, body {
 	background:#ffbb00;
 	padding:15px;
 	margin-top:-10px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.12);
 }
 
 .header-center-text {
@@ -155,6 +157,7 @@ house {
 .house-status {
 	display:flex;
 	flex-direction:row;
+	font-size:22px;
 }
 
 .house-status-production {
@@ -172,7 +175,7 @@ house {
 .ground {
 	height: 100%;
 	width:100%;
-	background:green;
+	background: linear-gradient(#87c500, #75a800);
 }
 
  .six-houses {
@@ -180,7 +183,7 @@ house {
  }
 
 .vertical-road {
-	background:grey;
+	background:#444;
 	width:30px;
 	float:left;
 	height: Calc(50% - 15px);
@@ -201,8 +204,8 @@ house {
 }
 
 .horizontal-road {
-	background:grey;
-	width: Calc(33% - 20px);
+	background:#444;
+	width: Calc(33% - 18px);
 	float:left;
 	height:30px;
 }
@@ -221,11 +224,10 @@ face div {
 	height:30px;
 	float:left;
 	border: #fff 2px dashed;
-	background:grey;
+	background:#444;
 }
 
 .house-image {
-	margin:20px;
 	height:100%;
 	background-image:url('content/house_1.svg');
 	background-size:contain;
@@ -242,7 +244,7 @@ house {
 
 .six-houses house {
 	float:left;
-	width: Calc(33% - 20px);
+	width: Calc(33% - 18px);
 	height: Calc(50% - 15px);
 	padding:30px;
 }
