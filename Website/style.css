@@ -143,6 +143,15 @@ house {
 	height:30px;
 }
 
+face {
+	display:block;
+}
+
+face div {
+	width:100%;
+	height:100%;
+}
+
 .intersection {
 	width:26px;
 	height:26px;

@@ -5,7 +5,7 @@ angular.module('synergyCity').directive('globalData', function(){
     controller: function($scope){
       $scope.currentLevel = 1;
       $scope.currentTotalMoney = 42;
-      $scope.currentOverallHappiness = 37;
+      $scope.currentOverallHappiness = 0;
     }
   };
 });
