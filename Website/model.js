@@ -13,6 +13,7 @@ HappinessEngine.prototype.calculateHappiness = function(wallet, fixtures)
 
 	// Positive influences on happiness
 	// - wallet income > wallet expenses
+	// - Certain appliances increase happiness
 
 	// Negative influences on happiness
 	// - Neighbours have more power-producing fixtures
@@ -26,6 +27,7 @@ function FixtureType()
 	this.powerProduced = null;
 	this.powerConsumed = null;
 	this.powerStored = null;
+	this.ownerHappinessModifier = null;
 }
 
 FixtureType.prototype.getToolboxIcon = function()
@@ -38,6 +40,7 @@ SolarPanelFixture.prototype.constructor = SolarPanelFixture;
 function SolarPanelFixture()
 {
 	this.powerProduced = 1;
+	this.ownerHappinessModifier = 0.1;
 }
 
 WindTurbineFixture.prototype = new FixtureType();
@@ -45,6 +48,7 @@ WindTurbineFixture.prototype.constructor = WindTurbineFixture;
 function WindTurbineFixture()
 {
 	this.powerProduced = 1;
+	this.ownerHappinessModifier = 0.1;
 }
 
 
@@ -53,6 +57,7 @@ BatteryFixture.prototype.constructor = BatteryFixture;
 function BatteryFixture()
 {
 	this.powerStored = 1;
+	this.ownerHappinessModifier = 0.15;
 }
 
 // Appliances consume power
@@ -64,11 +69,24 @@ function ApplianceFixtureType()
 
 AirConditionerFixture.prototype = new ApplianceFixtureType();
 AirConditionerFixture.prototype.constructor = AirConditionerFixture;
-function AirConditionerFixture() {}
+function AirConditionerFixture()
+{
+	this.ownerHappinessModifier = 2;
+}
 
 TVFixture.prototype = new ApplianceFixtureType();
 TVFixture.prototype.constructor = TVFixture;
-function TVFixture() {}
+function TVFixture()
+{
+	this.ownerHappinessModifier = 3;
+}
+
+ElectricHeater.prototype = new ApplianceFixtureType();
+ElectricHeater.prototype.constructor = ElectricHeater;
+function ElectricHeater()
+{
+	this.ownerHappinessModifier = 1.5;
+}
 
 function Toolbox()
 {
