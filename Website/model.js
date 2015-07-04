@@ -1,15 +1,20 @@
 
+var seasons = ['spring', 'summer', 'autumn', 'winter'];
+
 var seasonalConsumption = {
-	'spring': 12.34,
-	'summer': 15.36,
-	'autumn': 14.25,
-	'winter': 15.58
+	'spring': {'3x1': 10.93, "4x2": 14.91, "5x3": 23.52 },
+	'summer': {'3x1': 13.61, "4x2": 18.56, "5x3": 29.27 },
+	'autumn': {'3x1': 12.62, "4x2": 17.22, "5x3": 27.16 },
+	'winter': {'3x1': 13.80, "4x2": 18.83, "5x3": 29.69 }
 };
+
+var sizes = ["3x1","4x2","5x3"];
 
 // The happiness engine
 function HappinessEngine()
 {
 }
+
 
 // Return:
 // 1  :)
@@ -19,12 +24,17 @@ HappinessEngine.prototype.calculateHappiness = function(wallet, fixtures)
 {
 	// FIXME: consider neighbourhood argument
 
+	var totalHappiness = 0;
+	totalHappiness += wallet.lastDisposableIncome;
 	// Positive influences on happiness
 	// - wallet income > wallet expenses
 	// - Certain appliances increase happiness
 
 	// Negative influences on happiness
 	// - Neighbours have more power-producing fixtures
+	if(totalHappiness > 0) return 1;
+	if(totalHappiness < 0) return -1;
+	return 0;
 }
 
 
@@ -111,17 +121,28 @@ function Wallet()
 {
 	this.balance = 0;
 	this.incomePerTimeSlice = 42;
+	this.lastDisposableIncome = 0;
 }
 
 Wallet.prototype.payPowerBill = function(consumption)
 {
 	// FIXME
+	var howMuchIPaid = 10; // FIXME
+	this.lastDisposableIncome = this.incomePerTimeSlice - howMuchIPaid;
+	this.balance -= howMuchIPaid;
+}
+
+Wallet.prototype.earnIncome = function()
+{
+	// FIXME
+	this.balance += this.incomePerTimeSlice;
 }
 
 function House()
 {
 	this.state = "It's not lupus";
 	this.fixtures = [];
+	this.size = sizes[Math.floor(Math.random() * (sizes.length))];
 	this.happinessEngine = new HappinessEngine();
 	this.wallet = new Wallet();
 	this.happiness = 0;
@@ -131,18 +152,21 @@ House.prototype.completeTimeSlice = function(season)
 {
 	var energyProduced = this.getProduction(season);
 	var energyConsumed = this.getConsumption(season);
-	this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
+	this.wallet.earnIncome();
+	this.wallet.payPowerBill(energyConsumed - energyProduced);
+	this.happiness = this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
 }
 
 House.prototype.getProduction = function(season)
 {
 	// FIXME: Get total production from all fixtures in the house
+	return 0;
 }
 
 House.prototype.getConsumption = function(season)
 {
 	// FIXME: Get total consumtpion from all fixtures in the house
-	return seasonalConsumption[season];
+	return seasonalConsumption[season][this.size];
 }
 
 function Neighbourhood()

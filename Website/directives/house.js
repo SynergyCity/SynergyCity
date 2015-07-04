@@ -6,6 +6,10 @@ angular.module('synergyCity')
       controller: function($scope) {
         $scope.__proto__ = $scope.$parent;
 
+	$scope.$watch('season', function(season) {
+	  $scope.house.completeTimeSlice(season);
+	})
+
         $scope.solarPanels = [
           {},
           {},

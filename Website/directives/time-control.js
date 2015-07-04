@@ -4,10 +4,9 @@ angular.module('synergyCity')
       restrict: 'E',
       templateUrl: 'directives/time-control.html',
       scope: true,
-      controller: function($scope) {
+      controller: function($scope, $rootScope) {
         $scope.nextClicked = function() {
-	  console.log('Next Clicked!');
-	  $scope.currentWeather = "smiley-sad" == $scope.currentWeather ? "smiley-happy" : "smiley-sad";
+	  $scope.progressSeason();
 	};
 
 	$scope.currentTime = "Summer?";
