@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 html, body {
 	height:100%;
 	margin:0;
@@ -11,15 +15,15 @@ html, body {
 }
 
 .toolbox {
-	flex: 0 0 400px;
+	flex: 0 0 200px;
 	border-right: #ddd 1px solid;
 }
 
 .canvas {
 	flex: 1;
 	height:100%;
-	display:flex;
-	flex-direction: row;
+	/*display:flex;
+	flex-direction: row;*/
 	/*padding:30px;*/
 }
 /*
@@ -28,29 +32,44 @@ house {
 	height:100%;
 }*/
 
-house {
-	flex:1;
-	display:flex;
-	flex-direction: column;
-	height:100%;
-	margin:5px;
-	/*margin: 100px;*/
-}
 
 .house-status {
-	flex: 0 0 50px;
-	background: red;
+	flex: 0 0 35px;	
+	color:white;
+}
+
+.production-value {
+	text-align:center;
+}
+
+.generation-value {
+	text-align:center;
+}
+
+.happiness-value {
+	text-align:center;
 }
 
 .house-view {
 	flex: 1;
-	background: orange;
+	position:relative;
+}
+
+.house-image {
+	height:100%;
+	background-image:url('content/house_1.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+    background-position: center;
+	position:absolute;
+	width:100%; 
 }
 
 .house-inventory {
 	flex: 1;
 	background: yellow;
 	position:relative;
+	margin-top:5px;
 }
 
 .solar-panels {
@@ -61,12 +80,9 @@ house {
 
 .solar-panel {
 	float:left;
-	width:25%;
+	width: 25%;
 	height:50%;
 	background:grey;
-}
-
-.solar-panel {
     opacity: 1;
 }
 .solar-panel.ng-enter {
@@ -79,7 +95,7 @@ house {
 }
 
 .global-panels {
-    width: 300px;
+    flex: 0 0 200px;
 }
 
 .house-status {
@@ -109,12 +125,6 @@ house {
 	 height:100%;
  }
 
-.six-houses .house-area {
-	float:left;
-	width: Calc(33% - 20px);
-	height: Calc(50% - 15px);
-}
-
 .vertical-road {
 	background:grey;
 	width:30px;
@@ -126,14 +136,14 @@ house {
 	width:0px;
 	border-right: #fff 2px dashed;
 	height:100%;
-	margin-left:50%;
+	margin-left:14px;
 }
 
 .horizontal-road-markings {
 	width:100%;
 	border-bottom: #fff 2px dashed;
 	height:0px;
-	margin-top:15px;
+	margin-top:14px;
 }
 
 .horizontal-road {
@@ -153,8 +163,8 @@ face div {
 }
 
 .intersection {
-	width:26px;
-	height:26px;
+	width:30px;
+	height:30px;
 	float:left;
 	border: #fff 2px dashed;
 	background:grey;
@@ -166,4 +176,19 @@ face div {
 	background-image:url('content/house_1.svg');
 	background-size:contain;
 	background-repeat:no-repeat;
+}
+house {
+	/*flex:1;*/
+	display:flex;
+	flex-direction: column;
+	/*height:100%;*/
+	/*margin:5px;*/
+	/*margin: 100px;*/
+}
+
+.six-houses house {
+	float:left;
+	width: Calc(33% - 20px);
+	height: Calc(50% - 15px);
+	padding:30px;
 }
