@@ -73,6 +73,22 @@ html, body {
 .toolbox {
 	flex: 0 0 200px;
 	border-right: #ddd 1px solid;
+	display:block;
+}
+
+toolbox {
+	height:100%;
+}
+
+.toolbox-solar-panel {
+	margin:20px;
+	width:calc(100% - 40px);
+	height:200px;
+	background-image:url('content/solar_panel.svg');
+	background-size: contain;
+	background-position:center;
+	background-repeat: no-repeat;
+	cursor:pointer;
 }
 
 .canvas {
@@ -90,7 +106,8 @@ house {
 
 
 .house-status {
-	flex: 0 0 35px;	
+	margin-top:20px;
+	flex: 0 0 65px;	
 	color:white;
 }
 
@@ -123,9 +140,8 @@ house {
 
 .house-inventory {
 	flex: 1;
-	background: yellow;
 	position:relative;
-	margin-top:5px;
+	margin-top:15px;
 }
 
 .solar-panels {
@@ -136,15 +152,21 @@ house {
 
 .solar-panel {
 	float:left;
-	width: 25%;
-	height:50%;
+	width: calc(25% - 20px);
+	height:100%;
 	background:grey;
     opacity: 1;
+	background:url('content/solar_panel.svg');
+	background-repeat:no-repeat;
+    background-position: center;
+	background-size: contain;
+	margin:10px;
+	opacity:0.2;
 }
 .solar-panel.ng-enter {
     -webkit-transition: 0.4s;
     transition: 0.4s;
-    opacity: 0;
+    opacity: 0.2;
 }
 .solar-panel.ng-enter-active {
     opacity: 1;
