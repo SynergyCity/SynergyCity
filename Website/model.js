@@ -8,6 +8,13 @@ var seasonalConsumption = {
 	'winter': {'3x1': 13.80, "4x2": 18.83, "5x3": 29.69 }
 };
 
+var seasonalProduction = {
+	'spring': [9.045, 9.55, 10.465, 13.01],
+	'summer': [12.24, 13.34, 14.72, 21.86],
+	'autumn': [11.03, 11.92, 14.01, 17.43],
+	'winter': [12.87, 13.73, 16.32, 18.02]
+};
+
 var sizes = ["3x1","4x2","5x3"];
 
 // The happiness engine
@@ -140,13 +147,21 @@ Wallet.prototype.earnIncome = function()
 
 function House()
 {
-	this.state = "It's not lupus";
+	this.diagnosis = "It's not lupus";
 	this.fixtures = [];
 	this.size = sizes[Math.floor(Math.random() * (sizes.length))];
 	this.happinessEngine = new HappinessEngine();
 	this.wallet = new Wallet();
 	this.happiness = 0;
 	this.iconId = Math.round(Math.random() * 7) + 1;
+}
+
+House.prototype.addFixture = function(fixture)
+{
+	if (this._solarPanels().length < 4)
+	{
+		this.fixtures.push(fixture);
+	}
 }
 
 House.prototype.completeTimeSlice = function(season)
@@ -158,10 +173,25 @@ House.prototype.completeTimeSlice = function(season)
 	this.happiness = this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
 }
 
+House.prototype._solarPanels = function()
+{
+	return this.fixtures.filter(function(fixture){
+		return fixture instanceof SolarPanelFixture;
+	});
+}
+
 House.prototype.getProduction = function(season)
 {
+	var house = this;
+
 	// FIXME: Get total production from all fixtures in the house
-	return 0;
+	var totalProduction = 0;
+	if (house._solarPanels().length > 0)
+	{
+		totalProduction = seasonalProduction[season][house._solarPanels().length - 1];
+	}
+
+	return totalProduction;
 }
 
 House.prototype.getConsumption = function(season)

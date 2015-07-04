@@ -10,16 +10,10 @@ angular.module('synergyCity')
 	  $scope.house.completeTimeSlice(season);
 	})
 
-        $scope.solarPanels = [
-          {},
-          {},
-          {},
-          {},
-        ];
+        $scope.solarPanels = $scope.house.fixtures;
         
         $scope.dropSolarPanel = function() {
-          console.log('drop')
-          $scope.solarPanels.push({});
+          $scope.house.addFixture(new SolarPanelFixture());
         }
         
         $scope.dragOverSolarPanel = function($event) {

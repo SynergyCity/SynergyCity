@@ -1,6 +1,6 @@
 	<div class="house-status">
 		<div class="house-status-production">
-			<div class="production-value">1.5KW</div>
+			<div class="production-value">{{house.getProduction(season)}}KW</div>
 		</div>
 		<div class="house-status-consumption">
 			<div class="consumption-value">{{house.getConsumption(season)}}KW</div>
