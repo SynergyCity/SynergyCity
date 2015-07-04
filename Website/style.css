@@ -129,6 +129,13 @@ house {
 	margin-left:50%;
 }
 
+.horizontal-road-markings {
+	width:100%;
+	border-bottom: #fff 2px dashed;
+	height:0px;
+	margin-top:15px;
+}
+
 .horizontal-road {
 	background:grey;
 	width: Calc(33% - 20px);
@@ -142,4 +149,12 @@ house {
 	float:left;
 	border: #fff 2px dashed;
 	background:grey;
+}
+
+.house-image {
+	margin:20px;
+	height:100%;
+	background-image:url('content/house_1.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
 }
