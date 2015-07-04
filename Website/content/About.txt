@@ -5,3 +5,14 @@ noun_67566_cc.svg<text x="0" y="111" fill="#000000" font-size="5px" font-weight=
 
 
 Synergy Pricing:	// https://www.synergy.net.au/at_home/home_plan_a1_tariff.xhtml
+
+synergy_govhack_data_20150702.xlsx
+
+http://www.cleanenergyregulator.gov.au/RET/Forms-and-resources/Postcode-data-for-small-scale-installations
+http://www.ata.org.au/ata-research/sunulator
+http://pv-map.apvi.org.au/
+http://arena.gov.au/resources/
+http://www.csiro.au/en/Research/EF/Areas/Electricity-grids-and-systems
+https://www.energex.com.au/__data/assets/pdf_file/0006/125619/8006.pdf
+http://apvi.org.au/wp-content/uploads/2014/07/PV-in-Australia-Report-2013.pdf
+http://www.abs.gov.au/
