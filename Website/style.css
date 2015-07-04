@@ -275,21 +275,44 @@ house {
 .global-level {
 	font-size: 20px;
 	text-align:center;
-	margin-top:30px;
+	margin-top:60px;
 }
 
 .global-money {
-	font-size:30px;
-	margin: 30px 0 0 30px;
+	font-size:20px;
+	margin: 30px 0 0 0;
+	text-align:center;
 }
 
 .global-happiness {
-	font-size:30px;
-	margin: 30px 0 0 30px;
-	display:inline-block;
+	font-size:20px;
+	margin: 30px 0 0 0;
 	vertical-align: middle;
+	text-align:center;
 }
 
 .global-happiness face {
 	vertical-align: middle;
+}
+
+.level-text {
+	font-size:30px;
+}
+
+.separator {
+	width:calc(100% - 100px);
+	margin:30px 50px 10px 50px;
+	border-top: #aaa 1px solid;
+}
+
+time-control {
+	display:block;
+	bottom:50px;
+	height:100px;
+	width:100%;
+	position:absolute;
+}
+
+.global-panels {
+	position:relative;
 }
