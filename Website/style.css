@@ -17,6 +17,9 @@ html, body {
 .canvas {
 	flex: 1;
 	height:100%;
+	display:flex;
+	flex-direction: row;
+	padding:30px;
 }
 /*
 house {
@@ -25,9 +28,11 @@ house {
 }*/
 
 house {
+	flex:1;
 	display:flex;
 	flex-direction: column;
 	height:100%;
+	margin:5px;
 	/*margin: 100px;*/
 }
 
@@ -70,4 +75,25 @@ house {
 }
 .solar-panel.ng-enter-active {
     opacity: 1;
+}
+
+.global-panels {
+    width: 300px;
+}
+
+.house-status {
+	display:flex;
+	flex-direction:row;
+}
+
+.house-status-production {
+	flex:1;
+}
+
+.house-status-generation {
+	flex:1;
+}
+
+.house-status-happiness {
+	flex:1;
 }
