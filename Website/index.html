@@ -12,6 +12,7 @@
 		<script src="directives/time-control.js"></script>
 		<script src="controllers/testController.js"></script>
 		<link href="style.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	</head>
 	<body ng-app="synergyCity" ng-controller="Controller" class="synergyCity">
 		<div class="toolbox">
@@ -20,7 +21,34 @@
 			<button ng-click="setHouses(4)">4 Houses</button>
 		</div>
 		<div class="canvas">
-			<house ng-repeat="house in houses"></house>
+			<!--<house ng-repeat="house in houses"></house>-->
+			<div class="ground">
+				<div class="six-houses">
+					<div class="house-area"></div>
+					<div class="vertical-road">
+						<div class="vertical-road-markings"></div>
+					</div>
+					<div class="house-area"></div>
+					<div class="vertical-road">
+						<div class="vertical-road-markings"></div>
+					</div>
+					<div class="house-area"></div>
+					<div class="horizontal-road"></div>
+					<div class="intersection"></div>
+					<div class="horizontal-road"></div>
+					<div class="intersection"></div>
+					<div class="horizontal-road"></div>
+					<div class="house-area"></div>
+					<div class="vertical-road">
+						<div class="vertical-road-markings"></div>
+					</div>
+					<div class="house-area"></div>
+					<div class="vertical-road">
+						<div class="vertical-road-markings"></div>
+					</div>
+					<div class="house-area"></div>
+				</div>
+			</div>
 		</div>
 		<div class="global-panels">
 			<global-data></global-data>

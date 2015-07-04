@@ -2,6 +2,7 @@ html, body {
 	height:100%;
 	margin:0;
 	padding:0;
+	font-family:roboto;
 }
 
 .synergyCity {
@@ -19,7 +20,7 @@ html, body {
 	height:100%;
 	display:flex;
 	flex-direction: row;
-	padding:30px;
+	/*padding:30px;*/
 }
 /*
 house {
@@ -96,4 +97,49 @@ house {
 
 .house-status-happiness {
 	flex:1;
+}
+
+.ground {
+	height: 100%;
+	width:100%;
+	background:green;
+}
+
+ .six-houses {
+	 height:100%;
+ }
+
+.six-houses .house-area {
+	float:left;
+	width: Calc(33% - 20px);
+	height: Calc(50% - 15px);
+}
+
+.vertical-road {
+	background:grey;
+	width:30px;
+	float:left;
+	height: Calc(50% - 15px);
+}
+
+.vertical-road-markings {
+	width:0px;
+	border-right: #fff 2px dashed;
+	height:100%;
+	margin-left:50%;
+}
+
+.horizontal-road {
+	background:grey;
+	width: Calc(33% - 20px);
+	float:left;
+	height:30px;
+}
+
+.intersection {
+	width:26px;
+	height:26px;
+	float:left;
+	border: #fff 2px dashed;
+	background:grey;
 }
