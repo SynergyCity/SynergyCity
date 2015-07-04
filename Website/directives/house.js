@@ -1,6 +1,7 @@
 angular.module('synergyCity')
   .directive('house', function() {
     return {
+      scope: true,
       templateUrl: 'directives/house.html',
       controller: function($scope) {
         $scope.solarPanels = [
