@@ -167,24 +167,23 @@ house {
 	float:left;
 	width: calc(25% - 20px);
 	height:100%;
-	background:grey;
-    opacity: 1;
 	background:url('content/solar_panel.svg');
 	background-repeat:no-repeat;
     background-position: center;
 	background-size: contain;
 	margin:10px;
 	opacity:0.2;
-}
-.solar-panel.ng-enter {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    opacity: 0.2;
-}
-.solar-panel.ng-enter-active {
-    opacity: 1;
+    /*-webkit-transition: 0.4s;
+    transition: 0.4s;*/
 }
 
+.dragging-solar-panel .solar-panel:not(.solar-panel-filled) {
+	opacity: 0.5;	
+}
+
+.solar-panel-filled {
+	opacity:1;
+}
 .global-panels {
     flex: 0 0 200px;
 }

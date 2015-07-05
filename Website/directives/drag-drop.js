@@ -18,6 +18,15 @@ angular.module('synergyCity')
       }
     }
   })
+  .directive('dragEnd', function() {
+    return {
+      controller: function($scope, $element, $attrs, $parse) {
+        $element.on('dragend', function(event) {
+			   $parse($attrs.dragEnd)($scope, { $event: event });
+		    });
+      }
+    }
+  })
   .directive('drop', function() {
     return {
       controller: function($scope, $element, $attrs, $parse) {

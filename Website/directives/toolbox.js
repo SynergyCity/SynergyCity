@@ -4,8 +4,16 @@ angular.module('synergyCity')
       scope: true,
       templateUrl: 'directives/toolbox.html',
       restrict: 'E',
-      controller: function($scope) {
+      controller: function($scope, $document, $rootScope) {
+        $rootScope.startDraggingSolarPanel = function() {
+          $rootScope.draggingSolarPanel = true;
+          angular.element(document.body).addClass('dragging-solar-panel');
+        }
         
+        $rootScope.endDraggingSolarPanel = function() {
+          $rootScope.draggingSolarPanel = false;
+          angular.element(document.body).removeClass('dragging-solar-panel');
+        }
       }
     };
   });
