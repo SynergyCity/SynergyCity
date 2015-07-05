@@ -140,9 +140,14 @@ function Wallet()
 
 Wallet.prototype.payPowerBill = function(consumption)
 {
-	var howMuchIPaid = consumption * powerCompany.pricePerUnit;
+	var howMuchIPaid = this.calculateBill(consumption);
 	this.lastDisposableIncome = this.incomePerTimeSlice - howMuchIPaid;
 	this.balance -= howMuchIPaid;
+}
+
+Wallet.prototype.calculateBill = function(consumption)
+{
+	return consumption * powerCompany.pricePerUnit;
 }
 
 Wallet.prototype.earnIncome = function()
@@ -173,13 +178,23 @@ House.prototype.addFixture = function(fixture)
 
 House.prototype.completeTimeSlice = function(season)
 {
+	this.wallet.earnIncome();
+	this.wallet.payPowerBill(this.computeOverallConsumption(season));
+	this.happiness = this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
+}
+
+House.prototype.nextPayment = function(season)
+{
+	return this.wallet.calculateBill(this.computeOverallConsumption(season));
+}
+
+House.prototype.computeOverallConsumption = function(season) {
 	var energyProduced = this.getProduction(season);
 	var energyConsumed = this.getConsumption(season);
-
+	
 	var timeSliceDays = seasonLengths[season];
-	this.wallet.earnIncome();
-	this.wallet.payPowerBill((energyConsumed - energyProduced) * timeSliceDays);
-	this.happiness = this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
+
+	return (energyConsumed - energyProduced) * timeSliceDays;
 }
 
 House.prototype._solarPanels = function()
