@@ -94,7 +94,8 @@ toolbox {
 
 .solar-panel-detail {
 	text-align:center;
-	font-size: 20px;
+	font-size: 16px;
+	line-height:25px;
 }
 
 .toolbox-message {
@@ -173,16 +174,27 @@ house {
 	background-size: contain;
 	margin:10px;
 	opacity:0.2;
-    /*-webkit-transition: 0.4s;
-    transition: 0.4s;*/
 }
 
-.dragging-solar-panel .solar-panel:not(.solar-panel-filled) {
-	opacity: 0.5;	
+.solar-panel-filled {
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.solar-panel-filled.ng-enter {
+	opacity:0.5;
+}
+
+.solar-panel-filled.ng-enter-active {
+	opacity:1;
 }
 
 .solar-panel-filled {
 	opacity:1;
+}
+
+.dragging-solar-panel .solar-panel:not(.solar-panel-filled) {
+	opacity: 0.5;	
 }
 .global-panels {
     flex: 0 0 200px;
@@ -326,7 +338,7 @@ house {
 
 .global-money {
 	font-size:20px;
-	margin: 30px 0 0 0;
+	margin: 60px 0 0 0;
 	text-align:center;
 }
 
@@ -353,7 +365,7 @@ house {
 
 time-control {
 	display:block;
-	bottom:50px;
+	bottom:100px;
 	height:100px;
 	width:100%;
 	position:absolute;
