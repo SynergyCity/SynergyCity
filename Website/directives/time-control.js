@@ -28,7 +28,7 @@ angular.module('synergyCity')
         };
 
         $scope.queueNextTick = function () {
-          $timeout(function () {
+          $scope.timeout = $timeout(function () {
               $scope.progressSeason();
               $scope.queueNextTick();
             }, 2000);
