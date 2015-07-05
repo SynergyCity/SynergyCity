@@ -40,14 +40,21 @@ HappinessEngine.prototype.calculateHappiness = function(wallet, fixtures)
 
 	var totalHappiness = 0;
 	totalHappiness += wallet.lastDisposableIncome;
+//	totalHappiness += wallet.balance;
+
+//	console.log("previous happiness: " + totalHappiness);
+//	var happinessModifier = fixtures.reduce(function(happinessModifier, fixture){ return happinessModifier + fixture.ownerHappinessModifier }, 0);
+//	totalHappiness += happinessModifier;
+
+	console.log("current happiness: " + totalHappiness);
 	// Positive influences on happiness
 	// - wallet income > wallet expenses
 	// - Certain appliances increase happiness
 
 	// Negative influences on happiness
 	// - Neighbours have more power-producing fixtures
-	if(totalHappiness > 0) return 1;
-	if(totalHappiness < 0) return -1;
+	if(totalHappiness > -50) return 1;
+	if(totalHappiness < -150) return -1;
 	return 0;
 }
 
@@ -73,7 +80,7 @@ SolarPanelFixture.prototype.constructor = SolarPanelFixture;
 function SolarPanelFixture()
 {
 	this.powerProduced = 1;
-	this.ownerHappinessModifier = 0.1;
+	this.ownerHappinessModifier = 200;
 }
 
 SolarPanelFixture.prototype.prices = [3500, 200, 300, 500];
@@ -142,7 +149,7 @@ function Toolbox()
 function Wallet()
 {
 	this.balance = 0;
-	this.incomePerTimeSlice = 450; // FIXME: magic number
+	this.incomePerTimeSlice = 350; // FIXME: magic number
 	this.lastDisposableIncome = 0;
 }
 
@@ -189,7 +196,7 @@ function House()
 
 House.prototype.addFixture = function(fixture)
 {
-	if(!this.canAffordFixture(fixture)) return;
+//	if(!this.canAffordFixture(fixture)) return;
 
 	if (fixture instanceof SolarPanelFixture && this._solarPanels().length < 4)
 	{
@@ -217,7 +224,9 @@ House.prototype.computeOverallConsumption = function(season) {
 	
 	var timeSliceDays = seasonLengths[season];
 
-	return (energyConsumed - energyProduced) * timeSliceDays;
+	var overall = (energyConsumed - energyProduced) * timeSliceDays;
+
+	return Math.max(overall, 0);
 }
 
 House.prototype._solarPanels = function()
