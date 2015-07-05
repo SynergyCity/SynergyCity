@@ -30,3 +30,9 @@ Matt Brooks - Leaf icon
 Arthur Shlain - Snowflake icon
 Arial Kotzer - Factory icon
 Daniele Katanalotto - Power plant icon
+
+# Technologies
+HTML
+CSS
+SVG
+JavaScript

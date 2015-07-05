@@ -8,10 +8,9 @@ angular.module('synergyCity')
         $rootScope.getOverallConsumption = function() {
           var overall = 0;
           $scope.houses.forEach(function(house) {
-            console.log(house.computeOverallConsumption($scope.season));
-            overall += house.computeOverallConsumption($scope.season);
+            overall += house.getConsumption($scope.season) - house.getProduction($scope.season);
           })
-          return overall;
+          return Math.max(0, overall);
         }
         
         $scope.nextClicked = function() {
