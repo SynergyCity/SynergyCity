@@ -164,6 +164,11 @@ Wallet.prototype.earnIncome = function()
 	this.balance += this.incomePerTimeSlice;
 }
 
+Wallet.prototype.buyFixture = function(price)
+{
+	this.balance -= price;
+}
+
 function House()
 {
 	this.diagnosis = "It's not lupus";
@@ -177,9 +182,12 @@ function House()
 
 House.prototype.addFixture = function(fixture)
 {
-	// TODO: Fixtures are not free
-	if (this._solarPanels().length < 4)
+	if(!canAffordFixture(fixture)) return;
+
+	if (fixture instanceof SolarPanelFixture && this._solarPanels().length < 4)
 	{
+		var price = fixture.nextPrice(this._solarPanels().length);
+		this.wallet.buyFixture(price);
 		this.fixtures.push(fixture);
 	}
 }
@@ -230,6 +238,13 @@ House.prototype.getConsumption = function(season)
 {
 	// FIXME: Get total consumtpion from all fixtures in the house
 	return seasonalConsumption[season][this.size];
+}
+
+House.prototype.canAffordFixture = function(fixture)
+{
+	return this.wallet.balance >= fixture.nextPrice(this.fixtures.filter(function(f){
+		return f.constructor.name == fixture.constructor.name;
+	}).length);
 }
 
 function Neighbourhood()
