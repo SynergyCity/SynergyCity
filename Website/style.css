@@ -261,6 +261,19 @@ face div {
 	margin-top:-2px;
 }
 
+.status-icon span.units {
+	font-size: 14px;
+}
+
+@media all and (max-width: 1900px) {
+	.status-item {
+		font-size:14px;
+	}
+	.status-icon span.units {
+		font-size: 12px;
+	}
+}
+
 .status-item * {
 	vertical-align: middle;
 }

@@ -4,11 +4,11 @@
 		</div>
 		<div class="status-item">
 			<img class="status-icon" src="content/production.svg" />
-			{{house.getProduction(season) | number:1}}kWh
+			{{house.getProduction(season) | number:1}}<span class="units">kWh</span>
 		</div>
 		<div class="status-item">
 			<img class="status-icon" src="content/consumption.svg" />
-			{{house.getConsumption(season) | number:1}}kWh
+			{{house.getConsumption(season) | number:1}}<span class="units">kWh</span>
 		</div>
 		<div class="status-item">
 			<img class="status-icon" src="content/money.svg" />
