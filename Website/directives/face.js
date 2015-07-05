@@ -3,7 +3,7 @@ angular.module('synergyCity')
     return {
       restrict: 'E',
       scope: { happinessLevel: '=' },
-      template: '<div style="background-size:contain;background-repeat:no-repeat;background-position:center;" ng-style="{\'background-image\':\'url(\\\'content/smiley-\' + happinessName + \'.svg\\\')\'}"></div>',
+      template: '<div style="background-size:contain;background-repeat:no-repeat;" ng-style="{\'background-image\':\'url(\\\'content/smiley-\' + happinessName + \'.svg\\\')\'}"></div>',
       controller: function($scope){
         $scope.happinessName = 'sad';
         $scope.$watch('happinessLevel', function(){

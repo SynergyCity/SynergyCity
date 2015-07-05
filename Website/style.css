@@ -119,9 +119,9 @@ house {
 
 
 .house-status {
-	margin-top:20px;
 	flex: 0 0 65px;	
 	color:white;
+	margin-bottom:10px;
 }
 
 .production-value {
@@ -152,9 +152,9 @@ house {
 }
 
 .house-inventory {
-	flex: 1;
+	flex: 0.6;
 	position:relative;
-	margin-top:15px;
+	margin-top:5px;
 }
 
 .solar-panels {
@@ -188,11 +188,42 @@ house {
     flex: 0 0 200px;
 }
 
+.large-status-item {
+	float:left;
+	width:33%;
+	height:50px;
+	color:black;
+}
+
+.large-status-item face {
+	height:100%;
+	width:100%;
+}
+
+.large-status-item face div {
+	background-position:inherit;
+}
+
+face div {
+	background-position:center;
+}
+
 .status-item {
 	float:left;
 	width:33%;
+	height:30px;
 	font-size:16px;
 	color:black;
+}
+
+.status-icon {
+	width:20px;
+	height:20px;
+	margin-top:-2px;
+}
+
+.status-item * {
+	vertical-align: middle;
 }
 
 .house-status {
@@ -330,4 +361,9 @@ time-control {
 
 .global-panels {
 	position:relative;
+}
+
+.house-label {
+	text-align:center;
+	margin-top:10px;
 }
