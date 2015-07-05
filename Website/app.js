@@ -26,5 +26,7 @@ angular.module('synergyCity', ['ngAnimate'])
       }
     }
     
+    $scope.music = Math.random() >= 0.5 ? 'content/music/busy_schedule.mp3' : 'content/music/chuggachugga.mp3';
+    
 //    $scope.setHouses(1);
   });

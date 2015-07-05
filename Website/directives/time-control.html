@@ -5,9 +5,9 @@
 		{{season | capitalize}}
 	</div>
 	
-	<div class="time-icon" ng-click="toggleGameplay()">Play</div>
-	<div class="time-icon" ng-click="toggleGameplay()">Pause</div>
-	<div class="time-icon" ng-click="toggleGameplay()">Next</div>
+	<div class="time-icon" ng-click="toggleGameplay()" ng-show="!playing">Play</div>
+	<div class="time-icon" ng-click="toggleGameplay()" ng-show="playing">Pause</div>
+	<div class="time-icon" ng-click="toggleGameplay()" ng-style="{ opacity: !playing ? 1 : 0.4 }">Next</div>
 	<!--<img src="content/noun_67566_cc.svg" style="width: 100px; height:100px;margin-left:50px;margin-top:10px;" ng-click="nextClicked()" />-->
   <!--<div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;float:left;width:40px;" ng-click="toggleGameplay()" ng-show="!playing">Play</div>
   <div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;float:left;width:40px;" ng-click="toggleGameplay()" ng-show="playing">Pause</div>
