@@ -421,3 +421,17 @@ time-control {
 	text-align:center;
 	margin-top:10px;
 }
+
+.time-icons {
+	text-align:center;
+	margin-top:30px;
+}
+
+.time-icon {
+	display:inline-block;
+}
+
+.time-icon img {
+	width:56px;
+	height:56px;
+}

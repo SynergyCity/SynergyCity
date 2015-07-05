@@ -22,6 +22,7 @@ angular.module('synergyCity')
             $scope.playing = false;
           } else {
             $scope.playing = true;
+              $scope.progressSeason();
             $scope.queueNextTick();
           }
         };
@@ -30,7 +31,7 @@ angular.module('synergyCity')
           $timeout(function () {
               $scope.progressSeason();
               $scope.queueNextTick();
-            }, 2500);
+            }, 2000);
         };
 
         $scope.nextClicked = function() {
