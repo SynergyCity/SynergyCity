@@ -40,21 +40,25 @@ HappinessEngine.prototype.calculateHappiness = function(wallet, fixtures)
 
 	var totalHappiness = 0;
 	totalHappiness += wallet.lastDisposableIncome;
+	if (wallet.balance < 0 && wallet.lastDisposableIncome < -50)
+	{
+		return -1;
+	}
 //	totalHappiness += wallet.balance;
 
 //	console.log("previous happiness: " + totalHappiness);
 //	var happinessModifier = fixtures.reduce(function(happinessModifier, fixture){ return happinessModifier + fixture.ownerHappinessModifier }, 0);
 //	totalHappiness += happinessModifier;
 
-	console.log("current happiness: " + totalHappiness);
+	//console.log("current happiness: " + totalHappiness);
 	// Positive influences on happiness
 	// - wallet income > wallet expenses
 	// - Certain appliances increase happiness
 
 	// Negative influences on happiness
 	// - Neighbours have more power-producing fixtures
-	if(totalHappiness > -50) return 1;
-	if(totalHappiness < -150) return -1;
+	if(totalHappiness > 100) return 1;
+	if(totalHappiness < -50) return -1;
 	return 0;
 }
 
@@ -148,8 +152,8 @@ function Toolbox()
 
 function Wallet()
 {
-	this.balance = 0;
-	this.incomePerTimeSlice = 350; // FIXME: magic number
+	this.balance = 1500;
+	this.incomePerTimeSlice = 250; // FIXME: magic number
 	this.lastDisposableIncome = 0;
 }
 
