@@ -38,7 +38,7 @@
 			</div>
 			<div class="canvas">
 				<!--<house ng-repeat="house in houses"></house>-->
-				<div class="ground">
+				<div class="ground" ng-style="{ background: seasonColors[season][0] }">
 					<div class="six-houses" ng-if="houses.length == 6">
 						<house house-ref="houses[0]"></house>
 						<div class="vertical-road">

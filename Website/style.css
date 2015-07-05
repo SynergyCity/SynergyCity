@@ -283,39 +283,44 @@ face div {
 .ground {
 	height: 100%;
 	width:100%;
-	background: linear-gradient(#87c500, #75a800);
+	transition: background-color 0.4s ease;
+	-webkit-transition: background-color 0.4s ease;
 }
 
  .six-houses {
 	 height:100%;
  }
 
-.vertical-road {
-	background:#444;
-	width:30px;
+.vertical-road {	
+	background-color:#444;
+	background-image: url('content/road_vertical.svg');
+	background-size:contain;
 	float:left;
-	height: Calc(50% - 15px);
+	width:60px;
+	height: Calc(50% - 35px);
 }
 
-.vertical-road-markings {
+/*.vertical-road-markings {
 	width:0px;
 	border-right: #fff 2px dashed;
 	height:100%;
 	margin-left:14px;
-}
+}*/
 
-.horizontal-road-markings {
+/*.horizontal-road-markings {
 	width:100%;
 	border-bottom: #fff 2px dashed;
 	height:0px;
 	margin-top:14px;
-}
+}*/
 
 .horizontal-road {
-	background:#444;
-	width: Calc(33% - 18px);
+	background-color:#444;
+	background-image: url('content/road_horizontal.svg');
+	background-size:contain;
+	width: Calc(33% - 37px);
 	float:left;
-	height:30px;
+	height:60px;
 }
 
 face {
@@ -328,11 +333,15 @@ face div {
 }
 
 .intersection {
-	width:30px;
-	height:30px;
+	width:60px;
+	height:60px;
 	float:left;
-	border: #fff 2px dashed;
+	/*border: #fff 3px solid;*/
 	background:#444;
+	background-image: url('content/road_intersection.svg');
+	
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 
 .house-image {
@@ -352,8 +361,8 @@ house {
 
 .six-houses house {
 	float:left;
-	width: Calc(33% - 18px);
-	height: Calc(50% - 15px);
+	width: Calc(33% - 37px);
+	height: Calc(50% - 35px);
 	padding:30px;
 }
 
