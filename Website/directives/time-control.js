@@ -30,11 +30,13 @@ angular.module('synergyCity')
           $timeout(function () {
               $scope.progressSeason();
               $scope.queueNextTick();
-            }, 3000);
+            }, 2500);
         };
 
         $scope.nextClicked = function() {
-	  $scope.progressSeason();
+          if (!$scope.playing) {
+            $scope.progressSeason();
+          }
 	};
 
 	$scope.currentWeather = "smiley-neutral";
