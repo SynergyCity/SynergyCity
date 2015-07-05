@@ -5,6 +5,14 @@ angular.module('synergyCity')
       templateUrl: 'directives/time-control.html',
       scope: true,
       controller: function($scope, $rootScope) {
+        $rootScope.getOverallConsumption = function() {
+          var overall = 0;
+          $scope.houses.forEach(function(house) {
+            overall += house.computeOverallConsumption($scope.season);
+          })
+          return overall;
+        }
+        
         $scope.nextClicked = function() {
 	  $scope.progressSeason();
 	};
