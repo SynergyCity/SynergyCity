@@ -283,7 +283,8 @@ face div {
 .ground {
 	height: 100%;
 	width:100%;
-	background: linear-gradient(#87c500, #75a800);
+	transition: background-color 0.4s ease;
+	-webkit-transition: background-color 0.4s ease;
 }
 
  .six-houses {

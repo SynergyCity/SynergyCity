@@ -2,6 +2,13 @@ angular.module('synergyCity', ['ngAnimate'])
   .run(function() {
     
   }).controller('Controller', function($scope) {
+    $scope.seasonColors = {
+      spring: ['red', 'red'],
+      summer: ['green', 'green'],
+      autumn: ['blue', 'blue'],
+      winter: ['orange', 'orange'],
+    };
+    
     $scope.seasonIndex = 0;
     $scope.$watch('seasonIndex', function(){
       $scope.season = seasons[$scope.seasonIndex];
