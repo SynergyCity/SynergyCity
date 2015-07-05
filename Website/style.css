@@ -188,10 +188,14 @@ house {
     flex: 0 0 200px;
 }
 
+.status-item {
+	float:left;
+	width:33%;
+	font-size:16px;
+	color:black;
+}
+
 .house-status {
-	display:flex;
-	flex-direction:row;
-	font-size:22px;
 }
 
 .house-status-production {
