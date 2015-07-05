@@ -60,6 +60,7 @@ function FixtureType()
 	this.powerConsumed = null;
 	this.powerStored = null;
 	this.ownerHappinessModifier = null;
+	this.price = null;
 }
 
 FixtureType.prototype.getToolboxIcon = function()
@@ -73,6 +74,13 @@ function SolarPanelFixture()
 {
 	this.powerProduced = 1;
 	this.ownerHappinessModifier = 0.1;
+}
+
+SolarPanelFixture.prototype.prices = [3500, 200, 300, 500];
+
+SolarPanelFixture.prototype.nextPrice = function(numberOfExistingPanels)
+{
+	return this.prices[numberOfExistingPanels];
 }
 
 WindTurbineFixture.prototype = new FixtureType();
