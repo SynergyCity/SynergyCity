@@ -31,5 +31,5 @@ angular.module('synergyCity', ['ngAnimate'])
 		'chuggachugga.mp3',
 		'wood_whistles.mp3'
 	];
-    $scope.music = soundtrack[Math.floor(Math.random() * 3)];
+    $scope.music = 'content/music/' + soundtrack[Math.floor(Math.random() * 3)];
   });
