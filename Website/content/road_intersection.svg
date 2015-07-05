@@ -3,6 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M115.5,68.5v64c0,2.209-1.791,4-4,4h-23c-2.209,0-4-1.791-4-4v-64
-	c0-2.209,1.791-4,4-4h23C113.709,64.5,115.5,66.291,115.5,68.5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M194.247,200.5h-45.255l51.508-51.508v45.255L194.247,200.5z
+	 M109.395,200.5H64.14L200.5,64.14v45.255L109.395,200.5z M23.127,200.5H0.5v-22.627L177.873,0.5H200.5v22.627L23.127,200.5z
+	 M6.753,0.5h45.255L0.5,52.008V6.753L6.753,0.5z M0.5,138.274V93.02L93.02,0.5h45.255L0.5,138.274z"/>
 </svg>
