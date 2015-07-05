@@ -26,7 +26,10 @@ angular.module('synergyCity', ['ngAnimate'])
       }
     }
     
-    $scope.music = Math.random() >= 0.5 ? 'content/music/busy_schedule.mp3' : 'content/music/chuggachugga.mp3';
-    
-//    $scope.setHouses(1);
+	var soundtrack = [
+		'busy_schedule.mp3',
+		'chuggachugga.mp3',
+		'wood_whistles.mp3'
+	];
+    $scope.music = soundtrack[Math.floor(Math.random() * 3)];
   });

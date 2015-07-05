@@ -36,3 +36,6 @@ HTML
 CSS
 SVG
 JavaScript
+
+# Music
+- OpenTTD OpenMSX: https://wiki.openttd.org/OpenMSX
