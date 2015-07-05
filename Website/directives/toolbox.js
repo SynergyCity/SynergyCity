@@ -5,6 +5,8 @@ angular.module('synergyCity')
       templateUrl: 'directives/toolbox.html',
       restrict: 'E',
       controller: function($scope, $document, $rootScope) {
+        $rootScope.solarPanelPrice = SolarPanelFixture.prototype.prices[0];
+        
         $rootScope.startDraggingSolarPanel = function() {
           $rootScope.draggingSolarPanel = true;
           angular.element(document.body).addClass('dragging-solar-panel');
