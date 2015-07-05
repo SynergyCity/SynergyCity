@@ -17,8 +17,8 @@ angular.module('synergyCity')
         $scope.playing = false;
 
         $scope.toggleGameplay = function () {
+			$timeout.cancel($scope.timeout);
           if ($scope.playing) {
-            $timeout.cancel($scope.timeout);
             $scope.playing = false;
           } else {
             $scope.playing = true;
