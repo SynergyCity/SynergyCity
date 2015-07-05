@@ -336,7 +336,7 @@ face div {
 	width:60px;
 	height:60px;
 	float:left;
-	border: #fff 3px solid;
+	/*border: #fff 3px solid;*/
 	background:#444;
 	background-image: url('content/road_intersection.svg');
 	
