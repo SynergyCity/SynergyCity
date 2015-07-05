@@ -177,7 +177,14 @@ function House()
 	this.happinessEngine = new HappinessEngine();
 	this.wallet = new Wallet();
 	this.happiness = 0;
-	this.iconId = Math.round(Math.random() * 7) + 1;
+		
+	if (this.size == "3x1") {
+		this.iconUrl = 'content/house_' + (Math.round(Math.random() * 7) + 1);	
+	} else if (this.size == "4x2") {
+		this.iconUrl = 'content/house_medium_' + (Math.round(Math.random() * 4) + 1);	
+	} else if (this.size == "5x3") {
+		this.iconUrl = 'content/house_large_' + (Math.round(Math.random() * 3) + 1);	
+	}
 }
 
 House.prototype.addFixture = function(fixture)
