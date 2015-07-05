@@ -4,7 +4,12 @@
 		<img ng-attr-src="content/{{season}}.svg" style="width:96px;height:96px;margin-bottom:5px;" /><br />
 		{{season | capitalize}}
 	</div>
-	<img src="content/noun_67566_cc.svg" style="width: 100px; height:100px;margin-left:50px;margin-top:10px;" ng-click="nextClicked()" />
-  <div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;" ng-click="toggleGameplay()" ng-show="!playing">Play</div>
-  <div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;" ng-click="toggleGameplay()" ng-show="playing">Pause</div>
+	
+	<div class="time-icon" ng-click="toggleGameplay()">Play</div>
+	<div class="time-icon" ng-click="toggleGameplay()">Pause</div>
+	<div class="time-icon" ng-click="toggleGameplay()">Next</div>
+	<!--<img src="content/noun_67566_cc.svg" style="width: 100px; height:100px;margin-left:50px;margin-top:10px;" ng-click="nextClicked()" />-->
+  <!--<div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;float:left;width:40px;" ng-click="toggleGameplay()" ng-show="!playing">Play</div>
+  <div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;float:left;width:40px;" ng-click="toggleGameplay()" ng-show="playing">Pause</div>
+  <div style="border: 4px solid black; border-radius: 10px; padding: 12px 0; text-align: center;float:left;width:40px;" ng-click="toggleGameplay()" ng-show="playing">Next</div>-->
 </div>
