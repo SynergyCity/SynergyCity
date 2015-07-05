@@ -1,5 +1,5 @@
 angular.module('synergyCity')
-  .directive('timeControl', function(){
+  .directive('timeControl', ['$timeout', function($timeout){
     return {
       restrict: 'E',
       templateUrl: 'directives/time-control.html',
@@ -12,7 +12,27 @@ angular.module('synergyCity')
           })
           return Math.max(0, overall);
         }
-        
+
+        $scope.timeout = null;
+        $scope.playing = false;
+
+        $scope.toggleGameplay = function () {
+          if ($scope.playing) {
+            $timeout.cancel($scope.timeout);
+            $scope.playing = false;
+          } else {
+            $scope.playing = true;
+            $scope.queueNextTick();
+          }
+        };
+
+        $scope.queueNextTick = function () {
+          $timeout(function () {
+              $scope.progressSeason();
+              $scope.queueNextTick();
+            }, 3000);
+        };
+
         $scope.nextClicked = function() {
 	  $scope.progressSeason();
 	};
@@ -20,9 +40,9 @@ angular.module('synergyCity')
 	$scope.currentWeather = "smiley-neutral";
       }
     };
-  })
-  .filter('capitalize', function(){ 
-    return function(input){ 
-      return input[0].toUpperCase() + input.slice(1); 
-    }; 
+  }])
+  .filter('capitalize', function(){
+    return function(input){
+      return input[0].toUpperCase() + input.slice(1);
+    };
   });
