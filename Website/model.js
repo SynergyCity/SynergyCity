@@ -15,6 +15,13 @@ var seasonalProduction = {
 	'winter': [12.87, 13.73, 16.32, 18.02]
 };
 
+var seasonLengths = {
+	'spring': 91,
+	'summer': 90,
+	'autumn': 92,
+	'winter': 92
+};
+
 var sizes = ["3x1","4x2","5x3"];
 
 // The happiness engine
@@ -127,14 +134,13 @@ function Toolbox()
 function Wallet()
 {
 	this.balance = 0;
-	this.incomePerTimeSlice = 42;
+	this.incomePerTimeSlice = 450; // FIXME: magic number
 	this.lastDisposableIncome = 0;
 }
 
 Wallet.prototype.payPowerBill = function(consumption)
 {
-	// FIXME
-	var howMuchIPaid = 10; // FIXME
+	var howMuchIPaid = consumption * powerCompany.pricePerUnit;
 	this.lastDisposableIncome = this.incomePerTimeSlice - howMuchIPaid;
 	this.balance -= howMuchIPaid;
 }
@@ -158,6 +164,7 @@ function House()
 
 House.prototype.addFixture = function(fixture)
 {
+	// TODO: Fixtures are not free
 	if (this._solarPanels().length < 4)
 	{
 		this.fixtures.push(fixture);
@@ -168,8 +175,10 @@ House.prototype.completeTimeSlice = function(season)
 {
 	var energyProduced = this.getProduction(season);
 	var energyConsumed = this.getConsumption(season);
+
+	var timeSliceDays = seasonLengths[season];
 	this.wallet.earnIncome();
-	this.wallet.payPowerBill(energyConsumed - energyProduced);
+	this.wallet.payPowerBill((energyConsumed - energyProduced) * timeSliceDays);
 	this.happiness = this.happinessEngine.calculateHappiness(this.wallet, this.fixtures);
 }
 
@@ -212,6 +221,8 @@ function PowerCompany()
 	this.powerGridActive = true;
 	this.coalGeneration = 0.8; // FIXME: Assuming 80% of power company's generation capacity is from coal
 }
+
+var powerCompany = new PowerCompany();
 
 function Environment()
 {

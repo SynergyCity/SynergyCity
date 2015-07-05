@@ -9,8 +9,12 @@ angular.module('synergyCity')
 	  $scope.progressSeason();
 	};
 
-	$scope.currentTime = "Summer?";
 	$scope.currentWeather = "smiley-neutral";
       }
     };
+  })
+  .filter('capitalize', function(){ 
+    return function(input){ 
+      return input[0].toUpperCase() + input.slice(1); 
+    }; 
   });

@@ -8,7 +8,9 @@ angular.module('synergyCity').directive('globalData', function(){
         $scope.currentTotalMoney = sum($scope.houses.map(function(house){ 
   	      return house.wallet.balance; 
         }));
+
 		var sumOfHappiness = sum($scope.houses.map(function(house){ return house.happiness; }));
+
 		$scope.currentOverallHappiness = sumOfHappiness > 0 ? 1 : sumOfHappiness == 0 ? 0 : -1;
 		$scope.sumOfHappiness = sumOfHappiness;
       }, true);
