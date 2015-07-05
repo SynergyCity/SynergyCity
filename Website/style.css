@@ -336,8 +336,12 @@ face div {
 	width:60px;
 	height:60px;
 	float:left;
-	border: #fff 2px dashed;
+	border: #fff 3px solid;
 	background:#444;
+	background-image: url('content/road_intersection.svg');
+	
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 
 .house-image {
