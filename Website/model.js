@@ -189,7 +189,7 @@ function House()
 
 House.prototype.addFixture = function(fixture)
 {
-	if(!canAffordFixture(fixture)) return;
+	if(!this.canAffordFixture(fixture)) return;
 
 	if (fixture instanceof SolarPanelFixture && this._solarPanels().length < 4)
 	{
